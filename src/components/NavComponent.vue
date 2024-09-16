@@ -22,9 +22,9 @@ export default {
         'translate-x-0': isSidebarOpen,
         '-translate-x-full': !isSidebarOpen,
       }"
-        class="fixed top-0 left-0 w-72 h-screen bg-gray-950 text-white transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static"
+        class="fixed top-0 left-0 w-72 h-screen bg-white text-black transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static drop-shadow-md"
     >
-      <div class="h-16 flex items-center justify-between px-4 bg-gray-950 text-white">
+      <div class="h-16 flex items-center justify-between px-4 bg-white text-black">
         <h2 class="text-lg font-semibold">Menu</h2>
         <button @click="toggleSidebar" class="text-black focus:outline-none">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -57,7 +57,7 @@ export default {
 
     <div class="flex-1 flex flex-col">
 
-      <nav class="bg-gray-50 text-black h-16 flex items-center justify-between px-4 drop-shadow-md">
+      <nav class="bg-white text-black h-16 flex items-center justify-between px-4 drop-shadow-md">
 
         <button @click="toggleSidebar" class="text-white focus:outline-none lg:hidden">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,15 +66,37 @@ export default {
         </button>
 
 
-        <h1 class="text-2xl font-bold">Software</h1>
+
+
+        <nav class="flex" aria-label="Breadcrumb">
+          <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+            <li class="inline-flex items-center">
+              <a href="#" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+                </svg>
+                Inicio
+              </a>
+            </li>
+            <li aria-current="page">
+              <div class="flex items-center">
+                <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                </svg>
+                <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">Usuario</span>
+              </div>
+            </li>
+          </ol>
+        </nav>
+
 
         <div class="flex items-center space-x-4">
-          <span>John Doe</span>
-          <img src="https://via.placeholder.com/40" alt="Foto de Perfil" class="rounded-full w-10 h-10"/>
+          <span>Breno Amaral</span>
+          <img src="/src/assets/image/perfil.jpg" alt="Foto de Perfil" class="rounded-full w-10 h-10 bg-cover"/>
         </div>
       </nav>
 
-      <main class="p-14 bg-gray-200 h-screen overflow-auto">
+      <main class="p-14 bg-gray-50 h-screen overflow-auto">
         <router-view></router-view>
       </main>
     </div>
